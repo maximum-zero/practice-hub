@@ -1,0 +1,46 @@
+# === Gradle ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# === IntelliJ IDEA ===
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# === Eclipse / STS ===
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans/
+.sts4-cache/
+bin/
+
+# === VSCode ===
+.vscode/
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+
+# === Log & temp ===
+*.log
+logs/
+log/
+tmp/
+*.tmp
+
+# === Kotlin (있을 경우 대비) ===
+.kotlin/
+
+# === Spring Initializr ===
+HELP.md
+
+# === Java build outputs (하위 모듈 포함) ===
+**/build/
+**/out/
+**/bin/

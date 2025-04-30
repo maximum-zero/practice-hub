@@ -1,0 +1,3 @@
+rootProject.name = 'practice-hub'
+
+include 'password-generator', 'spring-starter'
