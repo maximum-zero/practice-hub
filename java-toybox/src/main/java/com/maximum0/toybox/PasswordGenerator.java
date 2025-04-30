@@ -1,4 +1,4 @@
-package com.maximum0.passwordgenerator;
+package com.maximum0.toybox;
 
 public class PasswordGenerator {
 
