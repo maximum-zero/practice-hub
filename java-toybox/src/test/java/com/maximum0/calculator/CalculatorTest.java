@@ -17,20 +17,20 @@ public class CalculatorTest {
     @ParameterizedTest
     @MethodSource("formulaAndResult")
     void calculateTest(int operand1, String operator, int operand2, int result) {
-        assertThat(Calculator.calculate(operand1, operator, operand2)).isEqualTo(result);
+        assertThat(Calculator.calculate(new PositiveNumber(operand1), operator, new PositiveNumber(operand2))).isEqualTo(result);
     }
 
     @DisplayName("사칙연산이 아닌 경우 ArithmeticException 예외를 발생시킵니다.")
     @Test
     void exceptionByNotOperator() {
-        assertThatCode(() -> Calculator.calculate(10, "&", 5))
+        assertThatCode(() -> Calculator.calculate(new PositiveNumber(10), "&", new PositiveNumber(5)))
             .isInstanceOf(ArithmeticException.class)
             .hasMessage("올바른 사칙 연산이 아닙니다.");
     }
 
     @Test
     void exceptionByDivisionByZero() {
-        assertThatCode(() -> Calculator.calculate(10, "/", 0))
+        assertThatCode(() -> Calculator.calculate(new PositiveNumber(10), "/", new PositiveNumber(0)))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("0 또는 음수를 전달할 수 없습니다.");
     }
