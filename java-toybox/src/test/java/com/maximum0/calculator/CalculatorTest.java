@@ -2,25 +2,22 @@ package com.maximum0.calculator;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.assertj.core.api.Assertions.*;
+import static org.junit.jupiter.params.provider.Arguments.arguments;
 
 public class CalculatorTest {
 
     @DisplayName("사칙 연산을 수행한다.")
-    @Test
-    void calculateTest() {
-        int result = Calculator.calculate(10, "+", 5);
-        assertThat(result).isEqualTo(15);
-
-        int result2 = Calculator.calculate(10, "-", 5);
-        assertThat(result2).isEqualTo(5);
-
-        int result3 = Calculator.calculate(10, "*", 5);
-        assertThat(result3).isEqualTo(50);
-
-        int result4 = Calculator.calculate(10, "/", 5);
-        assertThat(result4).isEqualTo(2);
+    @ParameterizedTest
+    @MethodSource("formulaAndResult")
+    void calculateTest(int operand1, String operator, int operand2, int result) {
+        assertThat(Calculator.calculate(operand1, operator, operand2)).isEqualTo(result);
     }
 
     @DisplayName("사칙연산이 아닌 경우 ArithmeticException 예외를 발생시킵니다.")
@@ -36,5 +33,14 @@ public class CalculatorTest {
         assertThatCode(() -> Calculator.calculate(10, "/", 0))
             .isInstanceOf(IllegalArgumentException.class)
             .hasMessage("0 또는 음수를 전달할 수 없습니다.");
+    }
+
+    private static Stream<Arguments> formulaAndResult() {
+        return Stream.of(
+            arguments(10, "+", 5, 15),
+            arguments(10, "-", 5, 5),
+            arguments(10, "*", 5, 50),
+            arguments(10, "/", 5, 2)
+        );
     }
 }
