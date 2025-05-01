@@ -12,8 +12,11 @@ subprojects {
     targetCompatibility = '11'
 
     dependencies {
-        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.1'
-        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.1'
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+
+        testImplementation 'org.junit.jupiter:junit-jupiter' // 핵심
+        testImplementation 'org.junit.jupiter:junit-jupiter-params' // 파라미터화 테스트
+        testImplementation "org.assertj:assertj-core:3.23.1" // 어설션
     }
 
     test {
