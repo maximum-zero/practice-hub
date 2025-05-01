@@ -1,4 +1,4 @@
-package com.maximum0.calculator;
+package com.maximum0.calculator.domain;
 
 public class PositiveNumber {
 

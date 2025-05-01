@@ -1,6 +1,6 @@
 package com.maximum0.calculator.operator;
 
-import com.maximum0.calculator.PositiveNumber;
+import com.maximum0.calculator.domain.PositiveNumber;
 
 public class SubtractionArithmeticOperator implements IArithmeticOperator {
     @Override

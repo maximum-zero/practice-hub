@@ -1,4 +1,4 @@
-package com.maximum0.calculator;
+package com.maximum0.calculator.domain;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;

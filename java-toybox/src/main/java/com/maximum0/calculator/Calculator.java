@@ -1,5 +1,6 @@
 package com.maximum0.calculator;
 
+import com.maximum0.calculator.domain.PositiveNumber;
 import com.maximum0.calculator.operator.AdditionArithmeticOperator;
 import com.maximum0.calculator.operator.DivisionArithmeticOperator;
 import com.maximum0.calculator.operator.IArithmeticOperator;
