@@ -1,4 +1,4 @@
-package com.maximum0.toybox;
+package com.maximum0.passwordgenerator;
 
 public class PasswordGenerator {
     private final static String WRONG_PASSWORD_LENGTH_ERROR_MESSAGE = "비밀번호가 최소 8자 이상 12자 이하여야 합니다.";
