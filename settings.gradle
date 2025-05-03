@@ -1,3 +1,5 @@
 rootProject.name = 'practice-hub'
 
 include 'java-toybox', 'spring-starter'
+include 'was-practice'
+
