@@ -5,7 +5,7 @@ import org.maximum0.mvc.controller.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RequestMappingHandlerMapping {
+public class RequestMappingHandlerMapping implements HandlerMapping {
     private final Map<HandlerKey, Controller> mappings = new HashMap<>();
 
     void init() {
