@@ -8,7 +8,7 @@ public class UserDao {
         PreparedStatement pstmt = null;
 
         try {
-            conn = getConnection();
+            conn = ConnectionManager.getConnection();
             String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?)";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, user.getUserId());
@@ -34,7 +34,7 @@ public class UserDao {
         ResultSet rs = null;
 
         try {
-            conn = getConnection();
+            conn = ConnectionManager.getConnection();
             String sql = "SELECT userId, password, name, email FROM USERS WHERE userId = ?";
             pstmt = conn.prepareStatement(sql);
             pstmt.setString(1, userId);
@@ -58,19 +58,6 @@ public class UserDao {
             if (conn != null) {
                 conn.close();
             }
-        }
-    }
-
-    private Connection getConnection() {
-        String url = "jdbc:h2:mem://localhost/~/jdbc-practice;MODE=MySQL;DB_CLOSE_DELAY=-1";
-        String id = "sa";
-        String password = "";
-
-        try {
-            Class.forName("org.h2.Driver");
-            return DriverManager.getConnection(url, id, password);
-        } catch (Exception e) {
-            return null;
         }
     }
 }
