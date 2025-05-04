@@ -4,5 +4,5 @@ include 'java-toybox', 'spring-starter'
 include 'was-practice'
 include 'servlet-practice'
 include 'jdbc-practice'
-include 'mvc-practice'
+include 'reflection-practice'
 
