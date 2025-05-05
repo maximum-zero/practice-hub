@@ -6,4 +6,5 @@ include 'servlet-practice'
 include 'jdbc-practice'
 include 'reflection-practice'
 include 'mvc-pattern'
+include 'di-practice'
 
